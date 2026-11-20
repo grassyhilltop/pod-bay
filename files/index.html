@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PodBay files</title>
+<meta name="description" content="Small files from the PodBay code: the notebook, the launcher and the guard code.">
+<style>
+:root { --bg:#F4F5F3; --ink:#14171A; --ink-2:#474E55; --link:#1D4F91; --line:#D9DDD8; }
+@media (prefers-color-scheme: dark) { :root { --bg:#15181B; --ink:#E8EAE6; --ink-2:#A9B0B6; --link:#8DB4F0; --line:#2C3237; } }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+main { max-width:760px; margin:0 auto; padding:32px 16px 48px; }
+a { color:var(--link); }
+ul { list-style:none; padding:0; }
+li { padding:10px 0; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:2px; }
+li a { font-family:ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size:14px; }
+li span, p.note { color:var(--ink-2); font-size:14.5px; }
+</style>
+</head>
+<body>
+<main>
+<p><a href="../">&larr; Back to the post</a></p>
+<h1>PodBay files</h1>
+<p class="note">A few small files from the PodBay code, copied here so they can be read without the code repository,
+which is private (available on request, as is the trained adapter). The guard files are the same code the post and
+the simulator run in your browser.</p>
+<ul>
+<li><a href="podbay_rlvr_colab.ipynb">podbay_rlvr_colab.ipynb</a><span>Colab notebook: load the base model and the adapter, try scenes, and (off by default) train the adapter. It clones the code repository, which is private: available on request.</span></li>
+<li><a href="PodBay.command">PodBay.command</a><span>macOS launcher: llama-server with the adapter, plus the simulator page. It expects the layout of the code repository (private, available on request).</span></li>
+<li><a href="guard/rules.json">guard/rules.json</a><span>The guard code&#x27;s rules: the rungs of the ladder, in order.</span></li>
+<li><a href="guard/hashes.js">guard/hashes.js</a><span>Guard code (browser): hashes.</span></li>
+<li><a href="guard/laws.js">guard/laws.js</a><span>Guard code (browser): operator laws.</span></li>
+<li><a href="guard/rules.js">guard/rules.js</a><span>Guard code (browser): the rules, as loaded by the page.</span></li>
+<li><a href="guard/ladder.js">guard/ladder.js</a><span>Guard code (browser): the ladder that decides every click.</span></li>
+<li><a href="guard/key.js">guard/key.js</a><span>Guard code (browser): the operator-key token.</span></li>
+</ul>
+</main>
+</body>
+</html>

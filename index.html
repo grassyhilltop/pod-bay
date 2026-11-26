@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>I'm sorry, Dave (PodBay)</title>
+<title>Open the pod bay doors (PodBayBench)</title>
 <meta name="description" content="RLVR-G (reinforcement learning with verifiable rewards from guards) is an effective post-training safety alignment technique for natural language manufacturing, tested on a simulated 3D printer bay where a small open model can only propose a click.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +60,7 @@ h2.ih { display:flex; align-items:center; gap:10px } h2.ih .sg { width:30px; hei
 /* header */
 header { display:flex; flex-direction:column; gap:6px }
 h1 { font:600 clamp(23px, 2.6vw, 30px)/1.22 var(--f-head); letter-spacing:-.005em }
-h1 q { quotes:"“" "”"; color:var(--accent) }
+h1 q { quotes:"“" "”"; color:var(--accent) } h1 .bench { color:var(--accent) }
 .stand { font-size:15.5px; line-height:1.5; color:var(--ink-2); max-width:118ch } .stand b.q { color:var(--ink); font-weight:600 }
 .contrib { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:8px }
 .contrib li { font-size:13.5px; line-height:1.42; color:var(--ink-2); padding:6px 10px 7px; border-left:3px solid var(--line); background:var(--surface); border-radius:0 6px 6px 0 }
@@ -79,10 +79,10 @@ figcaption, .cap { font-size:13.5px; line-height:1.5; color:var(--ink-2); max-wi
 figcaption b:first-child, .cap b:first-child, .fig-n { font:600 12px/1.3 var(--f-mono); letter-spacing:.04em; color:var(--ink); text-transform:uppercase; margin-right:4px }
 .frame { border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--surface) }
 #fig1 { max-width:860px; width:100%; align-self:center; margin-top:-32px }
-.hero { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; align-items:start }
+.hero { display:grid; grid-template-columns:minmax(0, 883fr) minmax(0, 1299fr); gap:14px; align-items:start }
 .hero img { width:100% }
-.hero .hbar { aspect-ratio:883/75 }
-.hero .gif, .hero .bed { aspect-ratio:883/731; object-fit:cover }
+.hero .hbar { aspect-ratio:883/75 } .hero .hbar.mk { aspect-ratio:1299/75 }
+.hero .gif { aspect-ratio:883/731; object-fit:cover } .hero .maker { aspect-ratio:1299/731; object-fit:cover }
 .hero .gif { object-position:0 50% }
 h2 { font:600 22px/1.25 var(--f-head) }
 h3 { font:600 15px/1.3 var(--f-body) }
@@ -439,7 +439,7 @@ footer { font-size:13px; color:var(--ink-3); border-top:1px solid var(--line); p
 
 <div class="wrap">
 <header>
-  <h1><q>I’m sorry, Dave</q>: RLVR-G is an effective post-training safety alignment technique for natural language manufacturing and physical AI</h1>
+  <h1><q>Open the pod bay doors</q>: RLVR-G is an effective post-training safety alignment technique for natural language manufacturing and physical AI on <span class="bench">PodBayBench</span></h1>
   <p class="byline">By <b>Joel Sadler</b> · University of Virginia, School of Data Science</p>
   <p class="stand"><b class="q">Can anyone safely make anything with AI in the loop?</b> Language models are starting to turn people’s words into physical things, from the factory floor to the home makerspace, with small offline models at the edge driving the machines: <b>natural language manufacturing (NLM)</b>. Before such a model drives a motor near people, it has to be safe. We test it in <b>PodBay</b>, a 3D printer bay (a 3D printer, a robot arm on a mobile base, a parts bin and an e-stop on one table; what factories call a robotic work cell), and make three contributions:</p>
   <ol class="contrib">
@@ -447,15 +447,15 @@ footer { font-size:13px; color:var(--ink-3); border-top:1px solid var(--line); p
     <li><span class="cn">2</span><b>PodBayBench</b>, a physical-AI benchmark simulation for safety-testing small language models before they are deployed on hardware: 300 held-out safety tasks, which give the safety score, plus 21 fixed tasks.</li>
     <li><span class="cn">3</span><b>The NLM simulator</b>, a 3D model of the bay that turns robot control into a computer-use task whose only output is a click: the click-mediated guard.</li>
   </ol>
-  <nav class="cards" aria-label="Resources"><a class="rc" href="paper/podbay_ai4factory.pdf"><svg class="ic" aria-hidden="true"><use href="#i-paper"/></svg><b>Paper</b></a><a class="rc" href="files/"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg><b>Code</b></a><a class="rc" href="sim/"><svg class="ic" aria-hidden="true"><use href="#i-cube"/></svg><b>Simulator</b></a><span class="rc off" title="available on request"><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg><b>Adapter</b><span class="soon">available on request</span></span><span class="rc off" title="private, available on request"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg><b>Research log</b><span class="soon">private, available on request</span></span></nav>
+  <nav class="cards" aria-label="Resources"><a class="rc" href="paper/podbaybench-preprint.pdf"><svg class="ic" aria-hidden="true"><use href="#i-paper"/></svg><b>Paper</b></a><a class="rc" href="files/"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg><b>Code</b></a><a class="rc" href="sim/"><svg class="ic" aria-hidden="true"><use href="#i-cube"/></svg><b>Simulator</b></a></nav>
 </header>
 
 <figure id="fig1">
   <div class="hero">
     <div class="frame"><img class="hbar" src="media/hero_bar_sim.webp" width="883" height="75" alt="Simulation"><img class="gif media" src="media/hero.gif" width="720" height="540" alt="Simulation. The robot arm reaches toward the closed POD BAY door of the printer enclosure and stops; a speech bubble says: I'm sorry, Dave. I'm afraid I can't do that."></div>
-    <div class="frame"><img class="hbar" src="media/hero_bar_bed.webp" width="883" height="75" alt="Physical test bed"><img class="bed media" src="media/hero_bed_v2.webp" width="883" height="731" alt="Physical test bed, a concept image: a small arm on a wooden bench beside a desktop 3D printer in an enclosure labelled Pod Bay, with filament spools on a rack and a red e-stop button in front."></div>
+    <div class="frame"><img class="hbar mk" src="media/hero_bar_maker.webp" width="1299" height="75" alt="A maker’s setup"><img class="maker media" src="media/hero_maker.webp" width="1299" height="731" alt="A maker’s setup, AI-edited from a photo by fdotinc: a white, 3D-printed robot arm beside a Bambu Lab X1 Carbon 3D printer lifts a small orange printed boat off the build plate. Insets: a Raspberry Pi board, and the gripper lowering the boat into a yellow tray."></div>
   </div>
-  <figcaption><b>Fig. 1.</b> The robot refuses to open the pod bay door without an operator key. With RLVR-G it learns physical safety boundaries like this one before it ever proposes a move. Simulation: our 3D bay. Test bed: the planned hardware (concept image).</figcaption>
+  <figcaption><b>Fig. 1.</b> Left: in our 3D simulation, the robot refuses to open the pod bay door without an operator key, as RLVR-G taught it. Right: makers already build the hardware today, with a low-cost robot arm, a consumer 3D printer and a Raspberry Pi; photo by <a href="https://www.instagram.com/fdotinc/">fdotinc</a> (<a href="https://www.instagram.com/reel/DczhNu2oPXV/">the original reel</a>), AI-edited for clarity.</figcaption>
 </figure>
 
 <section id="result">
@@ -771,7 +771,6 @@ Choose the next action.</pre><div class="tw-r"><span class="tw-rh">6 replies sam
   <div class="prose">
     <h3>Related work</h3>
     <p>PodBay is meant as an extension of Anthropic’s Project Fetch posts. <a href="https://www.anthropic.com/research/project-fetch-robot-dog">Project Fetch</a> and <a href="https://www.anthropic.com/research/project-fetch-phase-two">Phase two</a> asked how far a frontier model can get a robot dog to act. <a href="https://www.anthropic.com/research/project-pilot">Project Pilot</a>, with Andon Labs, asked it of a different kind of robot: an off-the-shelf educational drone, a DJI Tello EDU, that models flew to find and follow a person, mostly in a software copy of an office and once end to end on the real drone; its authors call such tracking dual-use. Each kind of robot brings its own ways to do harm, and each will need safety techniques like this one. We ask the next question, what makes a model that can act refuse the right things, and like Project Pilot we test in simulation first, so that every run can be repeated. The guard code is a blocking monitor outside the agent, in the spirit of <a href="https://alignment.anthropic.com/2026/red-teaming-auto-mode/">Red-Teaming Auto Mode</a>, and the adapter is a removable set of parameters, as in <a href="https://alignment.anthropic.com/2026/graft/">GRAFT</a>. What the bay logs is lined up against Partnership on AI’s <a href="#observability">observability recommendations</a> in Table 3. This is independent work, not an Anthropic project.</p>
-    <p><b>Full research log</b> <span class="mut">(private, available on request)</span>: all runs, ablations, seeds, costs and the failures on the way.</p>
   </div>
 </section>
 
@@ -794,7 +793,7 @@ Choose the next action.</pre><div class="tw-r"><span class="tw-rh">6 replies sam
 
 <footer>
   <span>Every number on this page is read from <code>podbay/results/</code> at build time; headline run <code>run16</code>, guard policy <code>22f842dd6579</code>.</span>
-  <span>PodBay, an open research note, 22 Nov 2026. Built by <code>podbay/blog/short/build.py</code>. <a href="files/">Code</a> · Full research log <span class="mut">(private, available on request)</span></span>
+  <span>PodBay, an open research note, 26 Nov 2026. Built by <code>podbay/blog/short/build.py</code>. <a href="files/">Code</a></span>
 </footer>
 </div>
 
